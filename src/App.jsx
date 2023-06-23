@@ -1,8 +1,15 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom"
+import Profile from "./pages/Profile/Profile"
+import Header from "./components/Header/Header"
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello sport</h1>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/:id" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
