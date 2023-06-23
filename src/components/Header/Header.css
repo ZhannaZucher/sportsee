@@ -1,0 +1,26 @@
+.header {
+	width: 100vw;
+	height: 90px;
+	background-color: #020203;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 90px 0 30px;
+}
+.header__logo img {
+	width: 178px; 
+	height: 60px;
+}
+
+.header__nav {
+	max-width: 75%;
+	width: 65em;
+	display: flex;
+	justify-content: space-between;
+}
+.header__nav a {
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: 500;
+}
