@@ -1,8 +1,8 @@
 import Card from "../../components/Card/Card"
-import energy from "../../assets/energy.svg"
-import chicken from "../../assets/chicken.svg"
-import apple from "../../assets/apple.svg"
-import burger from "../../assets/burger.svg"
+import energy from "../../assets/calories-icon.png"
+import chicken from "../../assets/protein-icon.png"
+import apple from "../../assets/carbs-icon.png"
+import burger from "../../assets/fat-icon.png"
 import VerticalNav from "../../components/VerticalNav/VerticalNav"
 import "./Profile.css"
 
@@ -25,31 +25,12 @@ export default function Profile() {
             <Card
               icon={energy}
               alt="energy"
-              classModifier="--red"
               value="1,930kCal"
               type="Calories"
             />
-            <Card
-              icon={chicken}
-              alt="chicken"
-              classModifier="--blue"
-              value="155g"
-              type="Proteines"
-            />
-            <Card
-              icon={apple}
-              alt="apple"
-              classModifier="yellow"
-              value="290g"
-              type="Glucides"
-            />
-            <Card
-              icon={burger}
-              alt="burger"
-              classModifier="rose"
-              value="90g"
-              type="Lipides"
-            />
+            <Card icon={chicken} alt="chicken" value="155g" type="Proteines" />
+            <Card icon={apple} alt="apple" value="290g" type="Glucides" />
+            <Card icon={burger} alt="burger" value="90g" type="Lipides" />
           </aside>
         </div>
       </div>
