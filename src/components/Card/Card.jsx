@@ -1,10 +1,10 @@
 import PropTypes from "prop-types"
 import "./Card.css"
 
-export default function Card({ icon, alt, classModifier, value, type }) {
+export default function Card({ icon, alt, value, type }) {
   return (
     <div className="card-row">
-      <div className={"card__icon" + classModifier}>
+      <div className="card__icon">
         <img src={icon} alt={alt} />
       </div>
       <div className="card__description">
@@ -18,7 +18,6 @@ export default function Card({ icon, alt, classModifier, value, type }) {
 Card.propTypes = {
   icon: PropTypes.string,
   alt: PropTypes.string,
-  classModifier: PropTypes.string,
   value: PropTypes.string,
   type: PropTypes.string,
 }
