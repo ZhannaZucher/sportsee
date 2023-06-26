@@ -1,0 +1,42 @@
+main {
+	width: 100%;
+}
+
+.content {
+	padding-left: 117px;
+	margin: 68px 90px 90px 105px;
+}
+
+.greeting {
+	margin-bottom: 75px;
+}
+.greeting__title {
+	font-size: 3em;
+	color: #000;
+}
+.greeting__title span {
+	color: #ff0101;
+}
+
+.greeting__subtitle {
+	font-size: 1.15em;
+	margin-top: 36px;
+}
+
+.stat-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.stat-container {
+	width: 835px;
+	height: 610px;
+	background-color: aquamarine;
+}
+
+.stat-aside {
+	flex: 0 1 23%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
