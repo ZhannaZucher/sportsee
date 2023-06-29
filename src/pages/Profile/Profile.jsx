@@ -1,4 +1,4 @@
-import fetchData from "../../utils/API"
+import getData from "../../utils/API"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Card from "../../components/Card/Card"
@@ -10,11 +10,12 @@ import "./Profile.css"
 
 export default function Profile() {
   const { id } = useParams()
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const data = fetchData(id, "userData")
-    setUser(data)
+    //const data = fetchData(id, "userData")
+    setUser(getData(id, "userData"))
+
     //const data = fetchData(id, "activity")
     //console.log(data)
   }, [id])
