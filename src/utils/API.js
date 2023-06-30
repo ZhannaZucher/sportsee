@@ -3,27 +3,23 @@ import mockData from "../data/data"
 const mock = true
 
 //getting requested data from mockData
-function getMockData(id, typeOfData) {
+function getMockData(userId, typeOfData) {
   let mockedData = {}
   switch (typeOfData) {
     case "userData":
-      mockedData = mockData.USER_MAIN_DATA.find(
-        (user) => user.id === parseInt(id)
-      )
+      mockedData = mockData.USER_MAIN_DATA.find((user) => user.id === userId)
       break
     case "activity":
-      mockedData = mockData.USER_ACTIVITY.find(
-        (user) => user.userId === parseInt(id)
-      )
+      mockedData = mockData.USER_ACTIVITY.find((user) => user.userId === userId)
       break
     case "average-sessions":
       mockedData = mockData.USER_AVERAGE_SESSIONS.find(
-        (user) => user.userId === parseInt(id)
+        (user) => user.userId === userId
       )
       break
     case "performance":
       mockedData = mockData.USER_PERFORMANCE.find(
-        (user) => user.userId === parseInt(id)
+        (user) => user.userId === userId
       )
       break
     default:
@@ -33,9 +29,8 @@ function getMockData(id, typeOfData) {
 }
 
 //getting requested data from API
-async function getApiData(id, typeOfData) {
+async function getApiData(userId, typeOfData) {
   let apiData = {}
-  const userId = parseInt(id)
   switch (typeOfData) {
     case "userData":
       try {
@@ -87,14 +82,14 @@ async function getApiData(id, typeOfData) {
 }
 
 //function that manages getting requested data from API or mockAPI
-export default function getData(id, typeOfData) {
+export default function getData(userId, typeOfData) {
   let data = {}
   if (!mock) {
-    data = getApiData(id, typeOfData)
+    data = getApiData(userId, typeOfData)
     console.log(data)
   } else {
     //in case if the "mock" is "true" we get necessary data from the mockAPI
-    data = getMockData(id, typeOfData)
+    data = getMockData(userId, typeOfData)
   }
   return data
 }
