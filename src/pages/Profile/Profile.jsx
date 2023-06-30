@@ -1,5 +1,5 @@
-import getData from "../../utils/API"
-import { useState, useEffect } from "react"
+//import getData from "../../utils/API"
+//import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Card from "../../components/Card/Card"
 import energy from "../../assets/calories-icon.png"
@@ -7,20 +7,30 @@ import chicken from "../../assets/protein-icon.png"
 import apple from "../../assets/carbs-icon.png"
 import burger from "../../assets/fat-icon.png"
 import "./Profile.css"
+import useFetch from "../../utils/hooks/useFetch"
 
 export default function Profile() {
   const { id } = useParams()
-  const [user, setUser] = useState(null)
+  const userId = parseInt(id)
+  /*const [user, setUser] = useState(null)
 
   useEffect(() => {
-    //const data = fetchData(id, "userData")
-    setUser(getData(id, "userData"))
+    const data = getData(id, "userData")
+    console.log(data)
+    setUser(data)
 
-    //const data = fetchData(id, "activity")
-    //console.log(data)
+    //const data = getData(id, "activity")
   }, [id])
+  */
 
-  return user.keyData ? (
+  const { data, error } = useFetch(userId, "userData")
+  const user = data
+
+  if (error) {
+    return <span> Oups! Il y a un problème</span>
+  }
+
+  return user && user.keyData ? (
     <main>
       <div className="content">
         <div className="greeting">
