@@ -8,6 +8,8 @@ import apple from "../../assets/carbs-icon.png"
 import burger from "../../assets/fat-icon.png"
 import "./Profile.css"
 import useFetch from "../../utils/hooks/useFetch"
+import BarChart from "../../components/BarChart/BarChart"
+import FormatData from "../../utils/FormatData/FormatData"
 
 export default function Profile() {
   const { id } = useParams()
@@ -25,6 +27,10 @@ export default function Profile() {
 
   const { data, error } = useFetch(userId, "userData")
   const user = data
+  console.log(user)
+  //a mettre dans RadialChart :
+  //const score = FormatData.formatScore(user)
+  // console.log(score)
 
   if (error) {
     return <span> Oups! Il y a un problème</span>
@@ -42,30 +48,36 @@ export default function Profile() {
           </p>
         </div>
         <div className="stat-row">
-          <div className="stat-container"></div>
+          <div className="stat-container">
+            <BarChart id={userId} />
+          </div>
           <aside className="stat-aside">
             <Card
               icon={energy}
               alt="energy"
-              value={`${user.keyData.calorieCount}kCal`}
+              value={`${FormatData.formatValue(
+                user?.keyData?.calorieCount
+              )}kCal`}
               type="Calories"
             />
             <Card
               icon={chicken}
               alt="chicken"
-              value={`${user.keyData.proteinCount}g`}
+              value={`${FormatData.formatValue(user?.keyData?.proteinCount)}g`}
               type="Proteines"
             />
             <Card
               icon={apple}
               alt="apple"
-              value={`${user.keyData.carbohydrateCount}g`}
+              value={`${FormatData.formatValue(
+                user?.keyData?.carbohydrateCount
+              )}g`}
               type="Glucides"
             />
             <Card
               icon={burger}
               alt="burger"
-              value={`${user.keyData.lipidCount}g`}
+              value={`${FormatData.formatValue(user?.keyData?.lipidCount)}g`}
               type="Lipides"
             />
           </aside>
