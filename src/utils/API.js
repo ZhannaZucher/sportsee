@@ -66,7 +66,7 @@ async function getApiData(userId, typeOfData) {
     case "performance":
       try {
         const response = await fetch(
-          `http://localhost:3000/user/${userId}/average-sessions`
+          `http://localhost:3000/user/${userId}/performance`
         )
         const res = await response.json()
         apiData = res.data
