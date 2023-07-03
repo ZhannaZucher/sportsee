@@ -8,8 +8,9 @@ import apple from "../../assets/carbs-icon.png"
 import burger from "../../assets/fat-icon.png"
 import "./Profile.css"
 import useFetch from "../../utils/hooks/useFetch"
-import BarChart from "../../components/BarChart/BarChart"
+import ActivityChart from "../../components/BarChart/BarChart"
 import FormatData from "../../utils/FormatData/FormatData"
+import ScoreChart from "../../components/ScoreChart/ScoreChart"
 
 export default function Profile() {
   const { id } = useParams()
@@ -29,8 +30,8 @@ export default function Profile() {
   const user = data
   console.log(user)
   //a mettre dans RadialChart :
-  //const score = FormatData.formatScore(user)
-  // console.log(score)
+  const score = FormatData.formatScore(user)
+  console.log(score)
 
   if (error) {
     return <span> Oups! Il y a un problème</span>
@@ -48,8 +49,17 @@ export default function Profile() {
           </p>
         </div>
         <div className="stat-row">
-          <div className="stat-container">
-            <BarChart id={userId} />
+          <div className="chart-container">
+            <div className="activity-chart-container">
+              <ActivityChart id={userId} />
+            </div>
+            <div className="chart-container__row">
+              <div className="sessions-chart-container"></div>
+              <div className="performance-chart-container"></div>
+              <div className="score-chart-container">
+                <ScoreChart score={score} />
+              </div>
+            </div>
           </div>
           <aside className="stat-aside">
             <Card
