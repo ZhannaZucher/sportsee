@@ -49,10 +49,12 @@ main {
 	justify-content: space-between;
 }
 
-.sessions-chart-container, .performance-chart-container, 
-.score-chart-container {
+.sessions-chart-container, .performance-chart-container {
 	width: 258px;
 	height: 263px;
+	border-radius: 5px;
+	background: #FBFBFB;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
 }
 
 /*styles for aside*/

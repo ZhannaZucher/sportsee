@@ -41,12 +41,12 @@ export default function Profile() {
     <main>
       <div className="content">
         <div className="greeting">
-          <p className="greeting__title">
+          <h1 className="greeting__title">
             Bonjour <span>{user.userInfos.firstName}</span>
-          </p>
-          <p className="greeting__subtitle">
+          </h1>
+          <h2 className="greeting__subtitle">
             Félicitations ! Vous avez explosé vos objectifs hier 👏
-          </p>
+          </h2>
         </div>
         <div className="stat-row">
           <div className="chart-container">
@@ -56,9 +56,7 @@ export default function Profile() {
             <div className="chart-container__row">
               <div className="sessions-chart-container"></div>
               <div className="performance-chart-container"></div>
-              <div className="score-chart-container">
-                <ScoreChart score={score} />
-              </div>
+              <ScoreChart score={score} />
             </div>
           </div>
           <aside className="stat-aside">

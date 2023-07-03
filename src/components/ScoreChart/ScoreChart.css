@@ -1,0 +1,44 @@
+
+.score {
+	width: 258px;
+	height: 263px;
+	border-radius: 5px;
+	background: #FBFBFB;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+   position: relative;
+}
+
+.score__legend {
+	position: absolute;
+	top: 24px;
+	left: 30px;
+	color: #20253A;
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.score__label {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 95px;
+	text-align: center;
+	margin-top: 16px;
+}
+
+.score__label-count{
+	color:#282D30;
+	font-size: 1.6em;
+	font-weight: 700;
+	line-height: 26px;
+	margin-bottom: 8px;
+}
+.score__label-text {
+	color: #74798C;
+}
