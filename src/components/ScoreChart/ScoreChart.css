@@ -8,19 +8,12 @@
    position: relative;
 }
 
-/*.score__legend {
-	position: absolute;
-	top: 24px;
-	left: 30px;
-	color: #20253A;
-	font-size: 1em;
-	font-weight: 500;
-	line-height: 24px;
-}*/
-
 .recharts-legend-item-text {
 	color: #20253A !important;
 	margin-left: 10px;
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 24px;
 }
 
 .score__label {

@@ -11,7 +11,6 @@ import "./ScoreChart.css"
 export default function ScoreChart({ score }) {
   return (
     <div className="score">
-      {/*<h3 className="score__legend">{score[0].name}</h3>*/}
       <div className="score__label">
         <span className="score__label-count">{score[0].uv + "%"}</span>
         <span className="score__label-text">de votre objectif</span>
