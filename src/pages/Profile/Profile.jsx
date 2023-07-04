@@ -1,5 +1,3 @@
-//import getData from "../../utils/API"
-//import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Card from "../../components/Card/Card"
 import energy from "../../assets/calories-icon.png"
@@ -8,30 +6,18 @@ import apple from "../../assets/carbs-icon.png"
 import burger from "../../assets/fat-icon.png"
 import "./Profile.css"
 import useFetch from "../../utils/hooks/useFetch"
-import ActivityChart from "../../components/BarChart/BarChart"
+import ActivityChart from "../../components/ActivityChart/ActivityChart"
 import FormatData from "../../utils/FormatData/FormatData"
 import ScoreChart from "../../components/ScoreChart/ScoreChart"
+import PerformanceChart from "../../components/PerformanceChart/PerformanceChart"
 
 export default function Profile() {
   const { id } = useParams()
   const userId = parseInt(id)
-  /*const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    const data = getData(id, "userData")
-    console.log(data)
-    setUser(data)
-
-    //const data = getData(id, "activity")
-  }, [id])
-  */
 
   const { data, error } = useFetch(userId, "userData")
   const user = data
-  console.log(user)
-  //a mettre dans RadialChart :
   const score = FormatData.formatScore(user)
-  console.log(score)
 
   if (error) {
     return <span> Oups! Il y a un problème</span>
@@ -55,7 +41,7 @@ export default function Profile() {
             </div>
             <div className="chart-container__row">
               <div className="sessions-chart-container"></div>
-              <div className="performance-chart-container"></div>
+              <PerformanceChart id={userId} />
               <ScoreChart score={score} />
             </div>
           </div>
