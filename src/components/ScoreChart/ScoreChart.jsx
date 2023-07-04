@@ -4,14 +4,14 @@ import {
   RadialBarChart,
   PolarAngleAxis,
   RadialBar,
-  /*Legend,*/
+  Legend,
 } from "recharts"
 import "./ScoreChart.css"
 
 export default function ScoreChart({ score }) {
   return (
     <div className="score">
-      <h3 className="score__legend">{score[0].name}</h3>
+      {/*<h3 className="score__legend">{score[0].name}</h3>*/}
       <div className="score__label">
         <span className="score__label-count">{score[0].uv + "%"}</span>
         <span className="score__label-text">de votre objectif</span>
@@ -26,11 +26,7 @@ export default function ScoreChart({ score }) {
           outerRadius={75}
           margin={{ top: 24, left: 20, right: 20, bottom: 20 }}
         >
-          {/*<Legend
-          iconSize={0}
-          verticalAlign="top"
-          align="left"
-        />*/}
+          <Legend iconSize={0} verticalAlign="top" align="left" />
           <PolarAngleAxis tick={false} type="number" domain={[0, 100]} />
           <RadialBar
             minAngle={15}
