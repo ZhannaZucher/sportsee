@@ -96,6 +96,7 @@ export default function useFetch(userId, typeOfData) {
       }
     }
     getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return { data, error }
 }
