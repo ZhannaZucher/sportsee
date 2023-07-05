@@ -10,6 +10,7 @@ import ActivityChart from "../../components/ActivityChart/ActivityChart"
 import FormatData from "../../utils/FormatData/FormatData"
 import ScoreChart from "../../components/ScoreChart/ScoreChart"
 import PerformanceChart from "../../components/PerformanceChart/PerformanceChart"
+import SessionsChart from "../../components/SessionsChart/SessionsChart"
 
 export default function Profile() {
   const { id } = useParams()
@@ -40,7 +41,7 @@ export default function Profile() {
               <ActivityChart id={userId} />
             </div>
             <div className="chart-container__row">
-              <div className="sessions-chart-container"></div>
+              <SessionsChart id={userId} />
               <PerformanceChart id={userId} />
               <ScoreChart score={score} />
             </div>
