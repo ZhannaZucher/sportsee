@@ -23,9 +23,8 @@ export default class FormatData {
     return formattedDays
   }
 
-  //method formatting kind of performance
+  //method formatting kind of performance data
   static translateToFrench(perfData) {
-    //console.log(perfData.kind)
     perfData.kind = {
       1: "Cardio",
       2: "Energie",
@@ -34,9 +33,20 @@ export default class FormatData {
       5: "Vitesse",
       6: "Intensité",
     }
-    return perfData?.data?.map((element) => ({
+
+    //adding text correspondances to performance data
+    const translatedData = perfData?.data?.map((element) => ({
       value: element.value,
       kind: perfData.kind[element.kind],
     }))
+    //reordering the performance data array
+    function orderData(unorderedData) {
+      const orderedData = []
+      for (let i = unorderedData?.length - 1; i > -1; i--) {
+        orderedData.push(unorderedData[i])
+      }
+      return orderedData
+    }
+    return orderData(translatedData)
   }
 }
