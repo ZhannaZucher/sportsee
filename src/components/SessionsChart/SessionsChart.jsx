@@ -1,13 +1,14 @@
 import FormatData from "../../utils/FormatData/FormatData"
 import useFetch from "../../utils/hooks/useFetch"
 import PropTypes from "prop-types"
+import CustomTooltipSessions from "../CustomTooltipSessions/CustomTooltipSessions"
 import "./SessionsChart.css"
 import {
   Legend,
   Line,
   LineChart,
   ResponsiveContainer,
-  //Tooltip,
+  Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
@@ -16,10 +17,6 @@ export default function SessionsChart({ id }) {
   const { data } = useFetch(id, "average-sessions")
   const sessions = FormatData.formatToWeekDays(data)
   console.log(sessions)
-
-  /*const CustomizeDot = () => {
-    return <img src={customDot} alt="activeDot" />
-  }*/
 
   const LegendContent = () => {
     return (
@@ -36,8 +33,8 @@ export default function SessionsChart({ id }) {
           data={sessions}
           margin={{
             top: 30,
-            right: -1,
-            left: -1,
+            right: 0,
+            left: 0,
             bottom: 10,
           }}
         >
@@ -51,10 +48,22 @@ export default function SessionsChart({ id }) {
               fontWeight: 500,
               fontSize: 12,
             }}
-            //padding={{ left: 20, right: 20 }}
+            padding={{ left: 3.5, right: 1 }}
           />
           <YAxis hide padding={{ top: 50, bottom: 20 }} />
-          {/*<Tooltip />*/}
+          <Tooltip
+            cursor={false}
+            content={<CustomTooltipSessions />}
+            wrapperStyle={{
+              height: "100%",
+              width: 70,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+            allowEscapeViewBox={{ x: true }}
+            position={{ y: 0 }}
+          />
           <Legend
             content={<LegendContent />}
             align="left"

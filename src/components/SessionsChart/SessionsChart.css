@@ -13,3 +13,8 @@
 	font-weight: 500;
 	line-height: 24px;
 }
+
+.recharts-cartesian-axis-ticks {
+	transform: translate(16px, 0) scaleX(0.88);
+}
+
