@@ -37,9 +37,7 @@ export default function Profile() {
         </div>
         <div className="stat-row">
           <div className="chart-container">
-            <div className="activity-chart-container">
-              <ActivityChart id={userId} />
-            </div>
+            <ActivityChart id={userId} />
             <div className="chart-container__row">
               <SessionsChart id={userId} />
               <PerformanceChart id={userId} />
