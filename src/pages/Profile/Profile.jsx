@@ -17,14 +17,13 @@ export default function Profile() {
   const userId = parseInt(id)
 
   const { data, error } = useFetch(userId, "userData")
-  const user = data
-  const score = FormatData.formatScore(user)
+  const user = new FormatData(data).formatUserData()
 
   if (error) {
     return <span> Oups! Il y a un problème</span>
   }
 
-  return user && user.keyData ? (
+  return user && user?.keyData ? (
     <main>
       <div className="content">
         <div className="greeting">
@@ -41,37 +40,37 @@ export default function Profile() {
             <div className="chart-container__row">
               <SessionsChart id={userId} />
               <PerformanceChart id={userId} />
-              <ScoreChart score={score} />
+              <ScoreChart score={user.score} />
             </div>
           </div>
           <aside className="stat-aside">
             <Card
               icon={energy}
               alt="energy"
-              value={`${FormatData.formatValue(
-                user?.keyData?.calorieCount
-              )}kCal`}
-              type="Calories"
+              value={user.keyData[0].calorieCount}
+              type={user.keyData[0].name}
+              unit={user.keyData[0].unit}
             />
             <Card
               icon={chicken}
               alt="chicken"
-              value={`${FormatData.formatValue(user?.keyData?.proteinCount)}g`}
-              type="Proteines"
+              value={user.keyData[1].proteinCount}
+              type={user.keyData[1].name}
+              unit={user.keyData[1].unit}
             />
             <Card
               icon={apple}
               alt="apple"
-              value={`${FormatData.formatValue(
-                user?.keyData?.carbohydrateCount
-              )}g`}
-              type="Glucides"
+              value={user.keyData[2].carbohydrateCount}
+              type={user.keyData[2].name}
+              unit={user.keyData[2].unit}
             />
             <Card
               icon={burger}
               alt="burger"
-              value={`${FormatData.formatValue(user?.keyData?.lipidCount)}g`}
-              type="Lipides"
+              value={user.keyData[3].lipidCount}
+              type={user.keyData[3].name}
+              unit={user.keyData[3].unit}
             />
           </aside>
         </div>

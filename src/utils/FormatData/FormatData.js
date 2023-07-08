@@ -1,31 +1,81 @@
 export default class FormatData {
-  //method formatting the user's today score
-  static formatScore(props) {
-    const score = props?.todayScore || props?.score
-    const data = [
-      {
-        name: "Score",
-        uv: score * 100,
-        fill: "#FF0000",
+  constructor(data) {
+    this.data = data
+  }
+
+  //method formatting user's main data
+  formatUserData() {
+    const formatedData = {
+      id: this.data?.id,
+      userInfos: {
+        firstName: this.data?.userInfos?.firstName,
       },
-    ]
-    return data
+      score: [
+        {
+          name: "Score",
+          uv: this.data?.todayScore * 100 || this.data?.score * 100,
+          fill: "#FF0000",
+        },
+      ],
+      keyData: [
+        {
+          calorieCount: new Intl.NumberFormat("en-IN").format(
+            this.data?.keyData?.calorieCount
+          ),
+          unit: "kCal",
+          name: "Calories",
+        },
+        {
+          proteinCount: new Intl.NumberFormat("en-IN").format(
+            this.data?.keyData?.proteinCount
+          ),
+          unit: "g",
+          name: "Proteines",
+        },
+        {
+          carbohydrateCount: new Intl.NumberFormat("en-IN").format(
+            this.data?.keyData?.carbohydrateCount
+          ),
+          unit: "g",
+          name: "Glucides",
+        },
+        {
+          lipidCount: new Intl.NumberFormat("en-IN").format(
+            this.data?.keyData?.lipidCount
+          ),
+          unit: "g",
+          name: "Lipides",
+        },
+      ],
+    }
+    return formatedData
   }
 
-  //method formatting value to english notation
-  static formatValue(value) {
-    return new Intl.NumberFormat("en-IN").format(value)
+  //method formatting activity data
+  formatActivityData() {
+    // transforming dates in week days' numbers
+    const formatedData = this.data?.sessions?.map((session) => ({
+      day: session?.day.slice(-1),
+      kilogram: session.kilogram,
+      calories: session.calories,
+    }))
+    return formatedData
   }
 
-  //method transforming dates to numbers
-  static formatDays(data) {
-    const formattedDays = data?.map((element) => element.day.slice(-1))
-    return formattedDays
+  //method formatting sessionsData
+  formatSessionsData() {
+    const weekDays = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" }
+    //transforming days in week days' initials
+    return this.data?.sessions?.map((session) => ({
+      day: weekDays[session.day],
+      sessionLength: session.sessionLength,
+    }))
   }
 
-  //method formatting kind of performance data
-  static translateToFrench(perfData) {
-    perfData.kind = {
+  //method formatting performance data
+  formatPerformanceData() {
+    //French translation of kind of performance
+    this.data.kind = {
       1: "Cardio",
       2: "Energie",
       3: "Endurance",
@@ -33,11 +83,10 @@ export default class FormatData {
       5: "Vitesse",
       6: "Intensité",
     }
-
     //adding text correspondances to performance data
-    const translatedData = perfData?.data?.map((element) => ({
+    const translatedData = this.data?.data?.map((element) => ({
       value: element.value,
-      kind: perfData.kind[element.kind],
+      kind: this.data.kind[element.kind],
     }))
     //reordering the performance data array
     function orderData(unorderedData) {
@@ -48,14 +97,5 @@ export default class FormatData {
       return orderedData
     }
     return orderData(translatedData)
-  }
-  //formatting days in weekDays sessionsData
-  static formatToWeekDays(sessionsData) {
-    console.log(sessionsData)
-    const weekDays = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" }
-    return sessionsData?.sessions?.map((session) => ({
-      day: weekDays[session.day],
-      sessionLength: session.sessionLength,
-    }))
   }
 }

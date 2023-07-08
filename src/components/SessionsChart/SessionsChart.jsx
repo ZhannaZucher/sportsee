@@ -15,8 +15,7 @@ import {
 
 export default function SessionsChart({ id }) {
   const { data } = useFetch(id, "average-sessions")
-  const sessions = FormatData.formatToWeekDays(data)
-  console.log(sessions)
+  const sessions = new FormatData(data).formatSessionsData()
 
   const LegendContent = () => {
     return (

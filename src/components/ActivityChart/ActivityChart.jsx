@@ -1,4 +1,4 @@
-//import FormatData from "../../utils/FormatData/FormatData"
+import FormatData from "../../utils/FormatData/FormatData"
 import useFetch from "../../utils/hooks/useFetch"
 import PropTypes from "prop-types"
 import "./ActivityChart.css"
@@ -14,15 +14,12 @@ import {
 
 export default function ActivityChart({ id }) {
   const { data } = useFetch(id, "activity")
-  const sessions = data.sessions
-  //const formattedDays = FormatData.formatDays(activity)
-  console.log(sessions)
-  //console.log(formattedDays)
+  const activity = new FormatData(data).formatActivityData()
 
   return (
     <div className="activity">
       <ResponsiveContainer>
-        <BarChart data={sessions}>
+        <BarChart data={activity}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="day" />
           <YAxis yAxisId="left" orientation="left" hide />

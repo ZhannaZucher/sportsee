@@ -12,7 +12,7 @@ import {
 
 export default function PerformanceChart({ id }) {
   const { data } = useFetch(id, "performance")
-  const performance = FormatData.translateToFrench(data)
+  const performance = new FormatData(data).formatPerformanceData()
 
   return (
     <div className="performance">
