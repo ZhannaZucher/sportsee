@@ -16,15 +16,44 @@ export default function ActivityChart({ id }) {
   const { data } = useFetch(id, "activity")
   const activity = new FormatData(data).formatActivityData()
 
+  const renderLegend = (props) => {
+    const { payload } = props
+
+    return (
+      <div className="activity__legend">
+        <span className="activity__legend-label">Activité quotidienne</span>
+        <ul>
+          {payload.map((entry, index) => (
+            <li key={`item-${index}`}>{entry.value}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
   return (
     <div className="activity">
       <ResponsiveContainer>
-        <BarChart data={activity}>
-          <CartesianGrid strokeDasharray="3 3" />
+        <BarChart
+          data={activity}
+          margin={{ top: 24, right: 30, bottom: 20, left: 40 }}
+        >
+          <CartesianGrid
+            strokeDasharray="3 3"
+            vertical={false}
+            stroke="#DEDEDE"
+          />
           <XAxis dataKey="day" />
           <YAxis yAxisId="left" orientation="left" hide />
-          <YAxis yAxisId="right" orientation="right" axisLine={false} />
+          <YAxis
+            yAxisId="right"
+            orientation="right"
+            axisLine={false}
+            tickCount={4}
+            domain={["dataMin-1", "dataMax+1"]}
+          />
           <Legend
+            //content={renderLegend}
             iconType="circle"
             iconSize={8}
             verticalAlign="top"
