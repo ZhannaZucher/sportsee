@@ -60,17 +60,17 @@ export default function ActivityChart({ id }) {
             align="right"
           />
           <Bar
-            yAxisId="left"
-            dataKey="calories"
-            fill="#E60000"
+            yAxisId="right"
+            dataKey="kilogram"
+            fill="282D30"
             barSize={6}
             maxBarSize={10}
             radius={[20, 20, 0, 0]}
           />
           <Bar
-            yAxisId="right"
-            dataKey="kilogram"
-            fill="#282D30"
+            yAxisId="left"
+            dataKey="calories"
+            fill="#E60000"
             barSize={6}
             maxBarSize={10}
             radius={[20, 20, 0, 0]}
