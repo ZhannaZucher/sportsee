@@ -19,9 +19,9 @@ export default function SessionsChart({ id }) {
 
   const LegendContent = () => {
     return (
-      <span className="sessions__legend">
+      <h2 className="sessions__legend">
         Durée moyenne des <br /> sessions
-      </span>
+      </h2>
     )
   }
 
