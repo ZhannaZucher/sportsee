@@ -8,7 +8,7 @@
    position: relative;
 }
 
-.recharts-legend-item-text {
+.score .recharts-legend-item-text {
 	color: #20253A !important;
 	margin-left: 10px;
 	font-size: 1em;
