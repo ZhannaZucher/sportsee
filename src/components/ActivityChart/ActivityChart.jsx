@@ -29,11 +29,16 @@ export default function ActivityChart({ id }) {
             strokeDasharray="3 3"
             vertical={false}
             stroke="#DEDEDE"
+            //horizontalPoints={[270, 210, 150]}
+            horizontalCoordinatesGenerator={(props) =>
+              props.height > 150 ? [100, 190] : [100, 200]
+            }
           />
           <XAxis
             dataKey="day"
             tickLine={false}
             scale="point"
+            padding={{ left: 10, right: 10 }}
             style={{
               fill: "#9B9EAC",
               fontWeight: 500,
@@ -46,7 +51,7 @@ export default function ActivityChart({ id }) {
             hide
             tickLine={false}
             axisLine={false}
-            tickCount={4}
+            tickCount={3}
             padding={{ top: 45 }}
             //domain={["dataMin-100", "dataMax+100"]}
           />
@@ -63,7 +68,7 @@ export default function ActivityChart({ id }) {
               fontSize: 14,
             }}
             padding={{ top: 45 }}
-            domain={["dataMin-1", "dataMax+5"]}
+            domain={["dataMin-1", "dataMax+1"]}
           />
           <Legend
             iconType="circle"
