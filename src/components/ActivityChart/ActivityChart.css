@@ -4,4 +4,29 @@
 	background: #fbfbfb;
 	border-radius: 5px;
    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+	position: relative;
+}
+
+.activity__label {
+	position: absolute;
+	top: 24px;
+	left: 30px;
+	color: #20253A;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.activity .recharts-legend-item-text {
+	color: #74798C !important;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.activity .recharts-default-legend li {
+	margin: 0 !important;
+}
+.activity .recharts-default-legend li:first-child {
+	margin-right: 30px !important;
 }

@@ -16,44 +16,56 @@ export default function ActivityChart({ id }) {
   const { data } = useFetch(id, "activity")
   const activity = new FormatData(data).formatActivityData()
 
-  const renderLegend = (props) => {
-    const { payload } = props
-
-    return (
-      <div className="activity__legend">
-        <span className="activity__legend-label">Activité quotidienne</span>
-        <ul>
-          {payload.map((entry, index) => (
-            <li key={`item-${index}`}>{entry.value}</li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
   return (
     <div className="activity">
+      <h2 className="activity__label">Activité quotidienne</h2>
       <ResponsiveContainer>
         <BarChart
           data={activity}
-          margin={{ top: 24, right: 30, bottom: 20, left: 40 }}
+          barGap={8}
+          margin={{ top: 24, right: 30, bottom: 20, left: 43 }}
         >
           <CartesianGrid
             strokeDasharray="3 3"
             vertical={false}
             stroke="#DEDEDE"
           />
-          <XAxis dataKey="day" />
-          <YAxis yAxisId="left" orientation="left" hide />
+          <XAxis
+            dataKey="day"
+            tickLine={false}
+            scale="point"
+            style={{
+              fill: "#9B9EAC",
+              fontWeight: 500,
+              fontSize: 14,
+            }}
+          />
+          <YAxis
+            yAxisId="left"
+            orientation="left"
+            hide
+            tickLine={false}
+            axisLine={false}
+            tickCount={4}
+            padding={{ top: 45 }}
+            //domain={["dataMin-100", "dataMax+100"]}
+          />
           <YAxis
             yAxisId="right"
             orientation="right"
             axisLine={false}
+            tickLine={false}
             tickCount={4}
-            domain={["dataMin-1", "dataMax+1"]}
+            tickMargin={30}
+            style={{
+              fill: "#9B9EAC",
+              fontWeight: 500,
+              fontSize: 14,
+            }}
+            padding={{ top: 45 }}
+            domain={["dataMin-1", "dataMax+5"]}
           />
           <Legend
-            //content={renderLegend}
             iconType="circle"
             iconSize={8}
             verticalAlign="top"
@@ -64,16 +76,16 @@ export default function ActivityChart({ id }) {
             dataKey="kilogram"
             fill="282D30"
             barSize={6}
-            maxBarSize={10}
-            radius={[20, 20, 0, 0]}
+            radius={[3, 3, 0, 0]}
+            name={"Poids (kg)"}
           />
           <Bar
             yAxisId="left"
             dataKey="calories"
             fill="#E60000"
             barSize={6}
-            maxBarSize={10}
-            radius={[20, 20, 0, 0]}
+            radius={[3, 3, 0, 0]}
+            name={"Calories brûlées (kCal)"}
           />
         </BarChart>
       </ResponsiveContainer>
