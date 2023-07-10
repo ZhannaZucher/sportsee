@@ -17,11 +17,11 @@ export default function PerformanceChart({ id }) {
   return (
     <div className="performance">
       <ResponsiveContainer>
-        <RadarChart innerRadius={10} outerRadius={90} data={performance}>
+        <RadarChart innerRadius={10} outerRadius="70%" data={performance}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
-            tick={{ fill: "#ffffff", fontSize: 11 }}
+            tick={{ fill: "#ffffff", fontSize: "0.68em" }}
           />
 
           <Radar

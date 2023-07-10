@@ -1,11 +1,11 @@
 .card-row {
 	display: flex;
 	align-items: center;
-	height: 124px;
+	height: 12.1vh;
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
 	background: #FBFBFB;
-	padding: 32px;
+	padding: 3.15vh 2.25vw;
 }
 .card__icon img {
 	width: 60px;
@@ -13,7 +13,7 @@
 }
 
 .card__description {
-	margin-left: 24px;;
+	margin-left: 1.7vw;
 }
 
 .card__value {

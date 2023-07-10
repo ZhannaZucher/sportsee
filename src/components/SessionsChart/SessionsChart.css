@@ -13,7 +13,7 @@
 	line-height: 24px;
 }
 
- .sessions.recharts-cartesian-axis-ticks {
+.sessions .recharts-cartesian-axis-ticks {
 	transform: translate(16px, 0) scaleX(0.88);
 }
 
