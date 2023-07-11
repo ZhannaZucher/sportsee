@@ -1,6 +1,6 @@
 
 .vertical {
-	width: 117px;
+	width: 8vw;
 	background: #020203;
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 	display: flex;
@@ -10,18 +10,18 @@
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	margin-top: 86px;
+	margin-top: 8.4vh;
 }
 
 .vertical-nav {
 	display: flex;
 	flex-direction: column;
-	margin: 100px 0 20px;
+	margin: 10vh 0 20px;
 }
 
 .vertical-nav a {
-	width: 64px;
-	height: 64px;
+	width: 4.45vw;
+	height: 6.28vh;
 	background: #fff;
 	border-radius: 6px;
 	display: flex;
@@ -31,9 +31,9 @@
 }
 
 .vertical__copyright {
-	width: 200px;
+	width: 14vw;
 	color: #fff;
-	font-size: 12px;
+	font-size: 0.75em;
 	transform: rotate(-90deg);
 }
 

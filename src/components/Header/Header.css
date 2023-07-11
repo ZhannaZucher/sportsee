@@ -1,16 +1,16 @@
 .header {
 	width: 100vw;
-	height: 90px;
+	height: 9vh;
 	background-color: #020203;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 90px 0 30px;
+	padding: 0 6.2vw 0 30px;
 }
 .header__logo img {
-	width: 178px; 
-	height: 60px;
+	width: 12.4vw; 
+	height: 6vh;
 }
 
 .header__nav {

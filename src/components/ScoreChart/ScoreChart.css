@@ -1,7 +1,7 @@
 
 .score {
 	width: 30.7%;
-	height: 263px;
+	height: 25.6vh;
 	border-radius: 5px;
 	background: #FBFBFB;
 	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
@@ -39,4 +39,19 @@
 }
 .score__label-text {
 	color: #74798C;
+}
+
+@media screen and (max-width: 1100px) {
+	.score .recharts-legend-item-text {
+		margin-left: -10px;
+		font-size: 0.9em;
+		line-height: 10px;
+	}
+	.score__label-count {
+		font-size: 1.3em;
+		line-height: 20px;
+		}
+	.score__label-text {
+		font-size: 0.9em;
+	}
 }

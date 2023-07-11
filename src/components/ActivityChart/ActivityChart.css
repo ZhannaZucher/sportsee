@@ -12,14 +12,14 @@
 	top: 24px;
 	left: 30px;
 	color: #20253A;
-	font-size: 15px;
+	font-size: 0.93em;
 	font-weight: 500;
 	line-height: 24px;
 }
 
 .activity .recharts-legend-item-text {
 	color: #74798C !important;
-	font-size: 14px;
+	font-size: 0.85em;
 	font-weight: 500;
 	line-height: 24px;
 }
