@@ -56,6 +56,7 @@ export default function SessionsChart({ id }) {
             wrapperStyle={{
               height: "100%",
               width: 70,
+              left: -8,
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
