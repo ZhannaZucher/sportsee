@@ -1,8 +1,8 @@
+import "./ActivityChart.css"
 import FormatData from "../../utils/FormatData/FormatData"
 import useFetch from "../../utils/hooks/useFetch"
 import CustomTooltipBarChart from "../CustomTooltipBarChart/CustomTooltipBarChart"
 import PropTypes from "prop-types"
-import "./ActivityChart.css"
 import {
   Bar,
   BarChart,
@@ -31,7 +31,6 @@ export default function ActivityChart({ id }) {
             strokeDasharray="3 3"
             vertical={false}
             stroke="#DEDEDE"
-            //horizontalPoints={[270, 210, 150]}
             horizontalCoordinatesGenerator={(props) =>
               props.height > 150 ? [100, 190] : [100, 200]
             }
@@ -39,13 +38,13 @@ export default function ActivityChart({ id }) {
           <XAxis
             dataKey="day"
             tickLine={false}
-            scale="point"
-            padding={{ left: 10, right: 10 }}
+            stroke="#9B9EAC"
             style={{
-              fill: "#9B9EAC",
               fontWeight: 500,
               fontSize: 14,
             }}
+            padding={{ left: -40, right: -40 }}
+            tickMargin={8}
           />
           <YAxis
             yAxisId="left"
@@ -54,8 +53,7 @@ export default function ActivityChart({ id }) {
             tickLine={false}
             axisLine={false}
             tickCount={3}
-            padding={{ top: 45 }}
-            //domain={["dataMin-100", "dataMax+100"]}
+            padding={{ top: 40 }}
           />
           <YAxis
             yAxisId="right"
@@ -69,22 +67,13 @@ export default function ActivityChart({ id }) {
               fontWeight: 500,
               fontSize: 14,
             }}
-            padding={{ top: 45 }}
+            padding={{ top: 40 }}
             domain={["dataMin-1", "dataMax+1"]}
           />
           <Tooltip
             content={<CustomTooltipBarChart />}
-            cursor={false}
-            wrapperStyle={{
-              height: "80%",
-              width: 56,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-end",
-            }}
-            allowEscapeViewBox={{ x: true }}
-            //position={{ y: 85 }}
+            cursor={{ opacity: 0.5, fill: "#c4c4c4" }}
+            offset={21}
           />
           <Legend
             iconType="circle"
@@ -113,7 +102,6 @@ export default function ActivityChart({ id }) {
     </div>
   )
 }
-
 ActivityChart.propTypes = {
   id: PropTypes.number.isRequired,
 }
