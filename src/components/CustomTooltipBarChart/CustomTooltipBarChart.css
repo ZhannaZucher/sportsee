@@ -1,0 +1,25 @@
+.activity .activity__tooltip::before{
+	   content: "";
+		position: absolute;
+		top: 0;
+		left: -63%;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.09);
+}
+
+.activity__tooltip-label {
+   background-color:  #E60000;
+	color: #ffffff;
+	text-align: center;
+	font-size: 7px;
+	font-weight: 500;
+	line-height: 24px;
+	width: 39px; 
+	height: 63px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: translate(25%, -40%) 
+}

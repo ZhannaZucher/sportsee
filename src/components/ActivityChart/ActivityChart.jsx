@@ -1,5 +1,6 @@
 import FormatData from "../../utils/FormatData/FormatData"
 import useFetch from "../../utils/hooks/useFetch"
+import CustomTooltipBarChart from "../CustomTooltipBarChart/CustomTooltipBarChart"
 import PropTypes from "prop-types"
 import "./ActivityChart.css"
 import {
@@ -8,6 +9,7 @@ import {
   CartesianGrid,
   Legend,
   ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
 } from "recharts"
@@ -69,6 +71,20 @@ export default function ActivityChart({ id }) {
             }}
             padding={{ top: 45 }}
             domain={["dataMin-1", "dataMax+1"]}
+          />
+          <Tooltip
+            content={<CustomTooltipBarChart />}
+            cursor={false}
+            wrapperStyle={{
+              height: "47%",
+              width: 56,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-end",
+            }}
+            allowEscapeViewBox={{ x: true }}
+            position={{ y: 85 }}
           />
           <Legend
             iconType="circle"

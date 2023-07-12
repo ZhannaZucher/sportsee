@@ -8,9 +8,10 @@
 	height: 24px;
 	padding-top: 8px;
 	opacity: 1 !important; 
+	z-index: 3;
 }
 
-.recharts-tooltip-wrapper::before {
+ .sessions .recharts-tooltip-wrapper::before {
 	content: "";
 	position: absolute;
 	top: 0;
