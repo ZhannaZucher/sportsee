@@ -11,10 +11,12 @@ main {
 .greeting {
 	margin-bottom: 7.25vh;
 }
+
 .greeting__title {
 	font-size: 3em;
 	color: #000;
 }
+
 .greeting__title span {
 	color: #ff0101;
 }

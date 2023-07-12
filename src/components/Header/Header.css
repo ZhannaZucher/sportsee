@@ -8,6 +8,7 @@
 	align-items: center;
 	padding: 0 6.2vw 0 30px;
 }
+
 .header__logo img {
 	width: 12.4vw; 
 	height: 6vh;
@@ -19,8 +20,8 @@
 	display: flex;
 	justify-content: space-between;
 }
+
 .header__nav a {
 	color: #fff;
 	font-size: 1.5em;
-
 }

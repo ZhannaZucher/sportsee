@@ -11,7 +11,7 @@
 	z-index: 3;
 }
 
- .sessions .recharts-tooltip-wrapper::before {
+.sessions .recharts-tooltip-wrapper::before {
 	content: "";
 	position: absolute;
 	top: 0;
