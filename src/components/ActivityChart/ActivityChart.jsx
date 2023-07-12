@@ -76,7 +76,7 @@ export default function ActivityChart({ id }) {
             content={<CustomTooltipBarChart />}
             cursor={false}
             wrapperStyle={{
-              height: "47%",
+              height: "80%",
               width: 56,
               display: "flex",
               flexDirection: "column",
@@ -84,7 +84,7 @@ export default function ActivityChart({ id }) {
               alignItems: "flex-end",
             }}
             allowEscapeViewBox={{ x: true }}
-            position={{ y: 85 }}
+            //position={{ y: 85 }}
           />
           <Legend
             iconType="circle"

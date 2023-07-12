@@ -1,12 +1,12 @@
 .activity .activity__tooltip::before{
-	   content: "";
-		position: absolute;
-		top: 0;
-		left: -63%;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		background-color: rgba(0, 0, 0, 0.09);
+	content: "";
+	position: absolute;
+	top: 11%;
+	left: -63%;
+	width: 100%;
+	height: 58%;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.09);
 }
 
 .activity__tooltip-label {
@@ -21,5 +21,5 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	transform: translate(25%, -40%) 
+	transform: translate(25%, 0) 
 }
