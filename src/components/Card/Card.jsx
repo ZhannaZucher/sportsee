@@ -16,9 +16,9 @@ export default function Card({ icon, alt, value, type, unit }) {
 }
 
 Card.propTypes = {
-  icon: PropTypes.string,
-  alt: PropTypes.string,
-  value: PropTypes.string,
-  type: PropTypes.string,
-  unit: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  unit: PropTypes.string.isRequired,
 }

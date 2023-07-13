@@ -14,5 +14,5 @@ export default function CustomTooltipBarChart({ active, payload }) {
 
 CustomTooltipBarChart.propTypes = {
   active: PropTypes.bool,
-  payload: PropTypes.array,
+  payload: PropTypes.arrayOf(PropTypes.any),
 }

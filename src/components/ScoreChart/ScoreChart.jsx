@@ -40,5 +40,11 @@ export default function ScoreChart({ score }) {
 }
 
 ScoreChart.propTypes = {
-  score: PropTypes.array.isRequired,
+  score: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      uv: PropTypes.number.isRequired,
+      fill: PropTypes.string.isRequired,
+    })
+  ),
 }

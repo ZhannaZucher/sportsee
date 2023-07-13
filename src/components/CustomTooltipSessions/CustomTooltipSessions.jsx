@@ -9,5 +9,5 @@ export default function CustomTooltipSessions({ active, payload }) {
 
 CustomTooltipSessions.propTypes = {
   active: PropTypes.bool,
-  payload: PropTypes.array,
+  payload: PropTypes.arrayOf(PropTypes.any),
 }
