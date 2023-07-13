@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# SPORTSEE App : analytics dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![REACT](https://img.shields.io/badge/React-303540?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Recharts](https://img.shields.io/badge/<Recharts%20/>-22b5bf?style=for-the-badge&logo=recharts&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## Available Scripts
+## Presentation
 
-In the project directory, you can run:
+![SNAPSHOT](/src/assets/screenshot.png)
 
-### `npm start`
+New version of the profile page for SportSee app presenting an analytics dashboard for daily progress tracking.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Install the source code to run the micro API forking and cloning it from [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-### `npm test`
+2. Clone the UI source code [here](https://github.com/ZhannaZucher/sportsee.git)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Launch the project
 
-### `npm run build`
+### 1. Backend :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow instructions to launch the micro API disponible in Backend repo [README](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard#readme).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install the dependencies with <code>yarn</code> or <code>npm install</code> command in the terminal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then run the app in dev mode with <code>yarn start</code> or <code>npm run start</code> command in the terminal which opens the default port [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+### 2. Frontend :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the dependencies with <code>yarn</code> or <code>npm install</code> command in the terminal.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The run the app in dev mode with <code>yarn start</code> or <code>npm start</code> command in the terminal which opens the disponible port [http://localhost:3001](http://localhost:3001).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Notes :**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- SportSee API only contains data for users with id 12 and 18
+  You can see dashboards of these users respectively at [http://localhost:3001/12](http://localhost:3001/12) and [http://localhost:3001/18](http://localhost:3001/18)
 
-## Learn More
+- Currently the project gets users' data from the mocked data. If you want to switch to the API data, you should change _const mock_ to _false_ in _src/utils/hooks/useFetch.jsx_ of this cloned repositary.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react?label=React)
 
-### Code Splitting
+![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/recharts?label=Recharts)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react-dom?label=React-DOM)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react-router-dom?label=React-router-DOM)
