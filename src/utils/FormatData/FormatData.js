@@ -1,3 +1,8 @@
+import energy from "../../assets/calories-icon.png"
+import chicken from "../../assets/protein-icon.png"
+import apple from "../../assets/carbs-icon.png"
+import burger from "../../assets/fat-icon.png"
+
 export default class FormatData {
   constructor(data) {
     this.data = data
@@ -19,32 +24,36 @@ export default class FormatData {
       ],
       keyData: [
         {
-          calorieCount: new Intl.NumberFormat("en-IN").format(
+          count: new Intl.NumberFormat("en-IN").format(
             this.data?.keyData?.calorieCount
           ),
           unit: "kCal",
           name: "Calories",
+          icon: energy,
         },
         {
-          proteinCount: new Intl.NumberFormat("en-IN").format(
+          count: new Intl.NumberFormat("en-IN").format(
             this.data?.keyData?.proteinCount
           ),
           unit: "g",
           name: "Proteines",
+          icon: chicken,
         },
         {
-          carbohydrateCount: new Intl.NumberFormat("en-IN").format(
+          count: new Intl.NumberFormat("en-IN").format(
             this.data?.keyData?.carbohydrateCount
           ),
           unit: "g",
           name: "Glucides",
+          icon: apple,
         },
         {
-          lipidCount: new Intl.NumberFormat("en-IN").format(
+          count: new Intl.NumberFormat("en-IN").format(
             this.data?.keyData?.lipidCount
           ),
           unit: "g",
           name: "Lipides",
+          icon: burger,
         },
       ],
     }

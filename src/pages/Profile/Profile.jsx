@@ -1,9 +1,5 @@
 import { useParams } from "react-router-dom"
 import Card from "../../components/Card/Card"
-import energy from "../../assets/calories-icon.png"
-import chicken from "../../assets/protein-icon.png"
-import apple from "../../assets/carbs-icon.png"
-import burger from "../../assets/fat-icon.png"
 import "./Profile.css"
 import useFetch from "../../utils/hooks/useFetch"
 import ActivityChart from "../../components/ActivityChart/ActivityChart"
@@ -44,34 +40,16 @@ export default function Profile() {
             </div>
           </div>
           <aside className="stat-aside">
-            <Card
-              icon={energy}
-              alt="energy"
-              value={user.keyData[0].calorieCount}
-              type={user.keyData[0].name}
-              unit={user.keyData[0].unit}
-            />
-            <Card
-              icon={chicken}
-              alt="chicken"
-              value={user.keyData[1].proteinCount}
-              type={user.keyData[1].name}
-              unit={user.keyData[1].unit}
-            />
-            <Card
-              icon={apple}
-              alt="apple"
-              value={user.keyData[2].carbohydrateCount}
-              type={user.keyData[2].name}
-              unit={user.keyData[2].unit}
-            />
-            <Card
-              icon={burger}
-              alt="burger"
-              value={user.keyData[3].lipidCount}
-              type={user.keyData[3].name}
-              unit={user.keyData[3].unit}
-            />
+            {user.keyData.map((data, index) => (
+              <Card
+                key={index}
+                alt="icon"
+                icon={data.icon}
+                value={data.count}
+                type={data.name}
+                unit={data.unit}
+              />
+            ))}
           </aside>
         </div>
       </div>
