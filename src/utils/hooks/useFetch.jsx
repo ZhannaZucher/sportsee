@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react"
 import mockData from "../../data/data"
 
-//manages the data sourcing : false = we get data from API, true = data from mockData
+//manages the data sourcing : false = data got from API, true = data got from mockData
 const mock = true
 
+//customized hook fetching data corresponding to requested user id and type of data
 export default function useFetch(userId, typeOfData) {
   const [data, setData] = useState({})
   const [error, setError] = useState(false)
 
   useEffect(() => {
     async function getData() {
+      // if mock is at "false" data is fetched from API
       if (!mock) {
+        //data is fetched from endpoint corresponding to requested data type
         switch (typeOfData) {
           case "userData":
             try {
@@ -64,6 +67,7 @@ export default function useFetch(userId, typeOfData) {
             setData({})
         }
       } else {
+        // if mock is at "true" data is obtained from corresponding mocked data
         let mockedData = {}
         switch (typeOfData) {
           case "userData":

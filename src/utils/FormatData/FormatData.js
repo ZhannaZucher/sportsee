@@ -53,7 +53,7 @@ export default class FormatData {
 
   //method formatting activity data
   formatActivityData() {
-    // transforming dates in week days' numbers
+    // transforming dates in weekdays' numbers
     const formatedData = this.data?.sessions?.map((session) => ({
       day: session?.day.slice(-1),
       kilogram: session.kilogram,
@@ -65,7 +65,7 @@ export default class FormatData {
   //method formatting sessionsData
   formatSessionsData() {
     const weekDays = { 1: "L", 2: "M", 3: "M", 4: "J", 5: "V", 6: "S", 7: "D" }
-    //transforming days in week days' initials
+    //transforming days in corresponding weekdays' initials
     return this.data?.sessions?.map((session) => ({
       day: weekDays[session.day],
       sessionLength: session.sessionLength,
