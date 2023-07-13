@@ -36,7 +36,7 @@ The run the app in dev mode with <code>yarn start</code> or <code>npm start</cod
 
 **Notes :**
 
-- SportSee API only contains data for users with id 12 and 18
+- SportSee API only contains data for users with id 12 and 18.
   You can see dashboards of these users respectively at [http://localhost:3001/12](http://localhost:3001/12) and [http://localhost:3001/18](http://localhost:3001/18)
 
 - Currently the project gets users' data from the mocked data. If you want to switch to the API data, you should change _const mock_ to _false_ in _src/utils/hooks/useFetch.jsx_ of this cloned repositary.
