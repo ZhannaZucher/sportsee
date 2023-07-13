@@ -89,13 +89,6 @@ export default class FormatData {
       kind: this.data.kind[element.kind],
     }))
     //reordering the performance data array
-    function orderData(unorderedData) {
-      const orderedData = []
-      for (let i = unorderedData?.length - 1; i > -1; i--) {
-        orderedData.push(unorderedData[i])
-      }
-      return orderedData
-    }
-    return orderData(translatedData)
+    return translatedData?.reverse()
   }
 }
