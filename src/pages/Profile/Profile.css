@@ -55,7 +55,7 @@ main {
 	justify-content: space-between;
 }
 
-.error {
+.error, .error-msg {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -67,6 +67,10 @@ main {
 .error p {
 	margin-bottom: 100px;
 	font-size: 2em;
+}
+
+.error-msg {
+
 }
 
 /*Responsive*/

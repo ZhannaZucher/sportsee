@@ -16,7 +16,7 @@ export default function Profile() {
   const user = new FormatData(data).formatUserData()
 
   if (error) {
-    return <span> Oups! Il y a un problème</span>
+    return <span className="error-msg"> Oups! Il y a un problème...</span>
   }
 
   return user && user?.keyData ? (
