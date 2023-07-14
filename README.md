@@ -41,6 +41,13 @@ The run the app in dev mode with <code>yarn start</code> or <code>npm start</cod
 
 - Currently the project gets users' data from the mocked data. If you want to switch to the API data, you should change _const mock_ to _false_ in _src/utils/hooks/useFetch.jsx_ of this cloned repositary.
 
+## Prerequisites
+
+- [NodeJS < v.18](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/en/) or [Npm](https://docs.npmjs.com/cli/v9/commands/npm-install)
+- Code editor like [VS Code](https://nodejs.org/en/https://code.visualstudio.com/), [PyCharm](https://www.jetbrains.com/fr-fr/pycharm/), [Sublim Text](https://www.sublimetext.com/) ...
+- [Git](https://git-scm.com/)
+
 ## Project Dependencies
 
 ![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react?label=React)
@@ -50,3 +57,5 @@ The run the app in dev mode with <code>yarn start</code> or <code>npm start</cod
 ![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react-dom?label=React-DOM)
 
 ![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/react-router-dom?label=React-router-DOM)
+
+![GitHub package.json dependency version (dev)](https://img.shields.io/github/package-json/dependency-version/ZhannaZucher/sportsee/prop-types)
