@@ -7,9 +7,6 @@
 ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## Presentation
-
-![SNAPSHOT](/src/assets/screenshot.png)
-
 New version of the profile page for SportSee app presenting an analytics dashboard for daily progress tracking.
 
 ## Project setup
