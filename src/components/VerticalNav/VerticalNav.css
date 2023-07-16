@@ -21,6 +21,8 @@
 .vertical-nav a {
 	width: 4.45vw;
 	height: 6.28vh;
+	max-width: 64px;
+	max-height: 64px;
 	background: #fff;
 	border-radius: 6px;
 	display: flex;

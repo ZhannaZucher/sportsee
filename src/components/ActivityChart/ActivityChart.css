@@ -1,6 +1,7 @@
 .activity {
 	width: 100%;
 	max-width: 835px;
+	max-height: 320px;
 	height: 52.4%;
 	background: #fbfbfb;
 	border-radius: 5px;
