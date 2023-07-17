@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import mockData from "../../data/data"
 
 //manages the data sourcing : false = data got from API, true = data got from mockData
-const mock = true
+const mock = false
 
 //customized hook fetching data corresponding to requested user id and type of data
 export default function useFetch(userId, typeOfData) {
@@ -100,7 +100,6 @@ export default function useFetch(userId, typeOfData) {
       }
     }
     getData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [typeOfData, userId])
   return { data, error }
 }
