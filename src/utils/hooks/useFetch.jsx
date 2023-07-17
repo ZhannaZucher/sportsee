@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import mockData from "../../data/data"
 
 //manages the data sourcing : false = data got from API, true = data got from mockData
-const mock = false
+const mock = true
 
 //customized hook fetching data corresponding to requested user id and type of data
 export default function useFetch(userId, typeOfData) {
