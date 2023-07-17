@@ -21,8 +21,8 @@ export default function ScoreChart({ score }) {
           barSize={10}
           startAngle={210}
           endAngle={-330}
-          innerRadius={100}
-          outerRadius={75}
+          innerRadius={70}
+          outerRadius={100}
           margin={{ top: 24, left: 20, right: 20, bottom: 20 }}
         >
           <Legend iconSize={0} verticalAlign="top" align="left" />
