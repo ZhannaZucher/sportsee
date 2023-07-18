@@ -8,11 +8,13 @@ const mock = true
 export default function useFetch(userId, typeOfData) {
   const [data, setData] = useState({})
   const [error, setError] = useState(false)
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     async function getData() {
       // if mock is at "false" data is fetched from API
       if (!mock) {
+        setLoading(true)
         //data is fetched from endpoint corresponding to requested data type
         switch (typeOfData) {
           case "userData":
@@ -25,6 +27,8 @@ export default function useFetch(userId, typeOfData) {
             } catch (error) {
               console.log(error)
               setError(error)
+            } finally {
+              setLoading(false)
             }
             break
           case "activity":
@@ -37,6 +41,8 @@ export default function useFetch(userId, typeOfData) {
             } catch (error) {
               console.log(error)
               setError(error)
+            } finally {
+              setLoading(false)
             }
             break
           case "average-sessions":
@@ -49,6 +55,8 @@ export default function useFetch(userId, typeOfData) {
             } catch (error) {
               console.log(error)
               setError(error)
+            } finally {
+              setLoading(false)
             }
             break
           case "performance":
@@ -61,6 +69,8 @@ export default function useFetch(userId, typeOfData) {
             } catch (error) {
               console.log(error)
               setError(error)
+            } finally {
+              setLoading(false)
             }
             break
           default:
@@ -101,5 +111,5 @@ export default function useFetch(userId, typeOfData) {
     }
     getData()
   }, [typeOfData, userId])
-  return { data, error }
+  return { data, error, isLoading }
 }
