@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Navigate } from "react-router-dom"
 import Card from "../../components/Card/Card"
 import "./Profile.css"
 import useFetch from "../../utils/hooks/useFetch"
@@ -7,12 +7,19 @@ import FormatData from "../../utils/FormatData/FormatData"
 import ScoreChart from "../../components/ScoreChart/ScoreChart"
 import PerformanceChart from "../../components/PerformanceChart/PerformanceChart"
 import SessionsChart from "../../components/SessionsChart/SessionsChart"
+import Error from "../Error/Error"
 
 export default function Profile() {
   const { id } = useParams()
   const userId = parseInt(id)
 
   const { data, error } = useFetch(userId, "userData")
+
+  // in case if there is no matches with requiered userId in dataBase, the data returns undefined
+  if (data === undefined) {
+    return <Navigate to="error" />
+  }
+
   const user = new FormatData(data).formatUserData()
 
   if (error) {
@@ -55,8 +62,6 @@ export default function Profile() {
       </div>
     </main>
   ) : (
-    <div className="error">
-      <p> Oups ! Cet utilisateur n'existe pas.</p>
-    </div>
+    <Error />
   )
 }
