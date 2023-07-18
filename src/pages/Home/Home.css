@@ -1,0 +1,46 @@
+.home {
+	width: 100%;
+	height: 100%;
+	padding-left: 9vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: baseline;
+	align-items: center;
+	padding-top: 20vh;
+}
+
+.home__title{
+	color: #ff0101;
+	font-size: 2.5em;
+	margin: 3vh 0;
+}
+
+.home__subtitle {
+	font-size: 1.8em;
+	margin: 3vh 0;
+}
+
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.links__btn {
+	margin: 20px;
+	width: 100px;
+	height: 50px;
+	background-color: #020203;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	transition: transform 300ms;
+}
+
+.links__btn:hover {
+	transform: scale(1.1);
+}
+
+.links__btn a {
+	font-weight: 500;
+	font-size: 1.3em;
+	color: #ffffff; 
+}
